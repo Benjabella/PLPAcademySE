@@ -16,12 +16,15 @@ my_list.extend([50, 60, 70])
 # Remove the last element from my_list
 my_list.pop()
 
-# Sort my_list in ascending order
-my_list.sort()
+# Sort my_list in ascending order without modifying the original list
+sorted_list = sorted(my_list)
 
-# Find and print the index of the value 30 in my_list
-index_of_30 = my_list.index(30)
-print(f"The index of 30 is: {index_of_30}")
+# Find and print the index of the value 30 in sorted_list
+try:
+	index_of_30 = sorted_list.index(30)
+	print(f"The index of 30 is: {index_of_30}")
+except ValueError:
+	print("Value 30 is not present in the sorted list.")
 
-# Print the final list to see all changes
-print(f"Final list: {my_list}")
+# Print the final sorted list to see all changes
+print(f"Final sorted list: {sorted_list}")
